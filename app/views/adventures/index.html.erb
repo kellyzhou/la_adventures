@@ -1,6 +1,6 @@
 <p id="notice"><%= notice %></p>
 
-<h1>Listing Adventures</h1>
+<h1>WHAT TO DO WHEN IN L.A.</h1>
 
 <table>
   <thead>
@@ -18,7 +18,8 @@
       <tr>
         <td><%= adventure.name %></td>
         <td><%= adventure.description %></td>
-        <td><%= adventure.picture %></td>
+       <!--  <td><%= adventure.picture %></td> -->
+       <td><%= image_tag(adventure.picture_url, :width => 100) if adventure.picture.present? %></td>
         <td><%= adventure.visit %></td>
         <td><%= link_to 'Show', adventure %></td>
         <td><%= link_to 'Edit', edit_adventure_path(adventure) %></td>
@@ -30,4 +31,9 @@
 
 <br>
 
-<%= link_to 'New Adventure', new_adventure_path %>
+<div class="new">
+<%= link_to 'Add new adventure!', new_adventure_path %>
+</div>
+<br>
+
+<p class="deadline">You have <span class="bucketcount"><%= @count %></span> items on your bucket list. Get moving.</p>

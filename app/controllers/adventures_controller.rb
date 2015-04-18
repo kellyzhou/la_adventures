@@ -4,8 +4,10 @@ class AdventuresController < ApplicationController
   # GET /adventures
   # GET /adventures.json
   def index
-    @adventures = Adventure.all
+    @adventures = Adventure.all.order(:visit)
+    @count = @adventures.count 
   end
+
 
   # GET /adventures/1
   # GET /adventures/1.json
