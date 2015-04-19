@@ -16,7 +16,7 @@
   <tbody>
     <% @adventures.each do |adventure| %>
       <tr>
-        <td><%= adventure.name %></td>
+        <td><%= link_to adventure.name, adventure %></td>
         <td><%= adventure.description %></td>
        <!--  <td><%= adventure.picture %></td> -->
        <td><%= image_tag(adventure.picture_url, :width => 100) if adventure.picture.present? %></td>
